@@ -11,6 +11,32 @@ var financialAccountRouter = express.Router()
  *     description: this API for get all financial account with a user already logged
  *     security:
  *	     - jwt: []
+ *     parameters:
+ *       - in: query
+ *         name: page
+ *         required: true
+ *         description: Financial account paging {limit 10 item}
+ *         example: 1
+ *         schema:
+ *           type: integer
+ *       - in: query
+ *         name: type
+ *         required: false
+ *         description: Financial account type filtering
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: start_date
+ *         required: false
+ *         description: Financial account start_date filtering
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: end_date
+ *         required: false
+ *         description: Financial account end_date filtering
+ *         schema:
+ *           type: string
  *     requestBody:
  *       required: true
  *       content:

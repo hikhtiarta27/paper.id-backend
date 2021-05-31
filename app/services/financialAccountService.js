@@ -21,7 +21,7 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: `Finance account with name: ${name} already registered`,
+            message: `Financial account with name: ${name} already registered`,
             result: null,
           })
         } else {
@@ -34,7 +34,7 @@ module.exports = {
               )
               res.status(200).send({
                 error: false,
-                message: `Finance account with name: ${name} successfully created`,
+                message: `Financial account with name: ${name} successfully created`,
                 result: null,
               })
             })
@@ -46,8 +46,14 @@ module.exports = {
   },
 
   getFinancialAccountByUserId(req, res) {
+    let options = {
+      type: req.query.type != null ? req.query.type : null,
+      start_date: req.query.start_date != null ? req.query.start_date : null,
+      end_date: req.query.end_date != null ? req.query.end_date : null,
+      page: req.query.page != null ? req.query.page : 1,
+    }
     financialAccountRepository
-      .getByUserId(req.body.userId)
+      .getByUserId(req.body.userId, options)
       .then((val) => {        
         let listOfFinancialAccount = []
         if (val != null) {
@@ -96,7 +102,7 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: `Finance account with id: ${id} not found`,
+            message: `Financial account with id: ${id} not found`,
             result: null,
           })
         } else {
@@ -109,7 +115,7 @@ module.exports = {
               )
               res.status(200).send({
                 error: false,
-                message: "Finance account successfully updated",
+                message: "Financial account successfully updated",
                 result: null,
               })
             })
@@ -133,7 +139,7 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: `Finance account with id: ${id} not found`,
+            message: `Financial account with id: ${id} not found`,
             result: null,
           })
         } else {
@@ -146,7 +152,7 @@ module.exports = {
               )
               res.status(401).send({
                 error: true,
-                message: `Finance account with id: ${id} still in use`,
+                message: `Financial account with id: ${id} still in use`,
                 result: null,
               })
             }else{
@@ -157,7 +163,7 @@ module.exports = {
                 )
                 res.status(200).send({
                   error: false,
-                  message: "Finance account successfully deleted",
+                  message: "Financial account successfully deleted",
                   result: null,
                 })
               })

@@ -22,7 +22,7 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: `Finance account ID not found`,
+            message: `Financial account ID not found`,
             result: null,
           })
         } else {
@@ -35,7 +35,7 @@ module.exports = {
               )
               res.status(200).send({
                 error: false,
-                message: `Finance transaction successfully created`,
+                message: `Financial transaction successfully created`,
                 result: null,
               })
             })
@@ -44,8 +44,14 @@ module.exports = {
   },
 
   getFinancialTransactionByUserId(req, res) {
+    let options = {
+      type: req.query.type != null ? req.query.type : null,
+      start_date: req.query.start_date != null ? req.query.start_date : null,
+      end_date: req.query.end_date != null ? req.query.end_date : null,
+      page: req.query.page != null ? req.query.page : 1,
+    }
     financialTransactionRepository
-      .getByUserId(req.body.userId)
+      .getByUserId(req.body.userId, options)
       .then((val) => {
         let listOfFinancialTransaction = []
         if (val != null) {          
@@ -100,7 +106,7 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: `Finance account with id ${financialAccountId} not found`,
+            message: `Financial account with id ${financialAccountId} not found`,
             result: null,
           })
         } else {
@@ -113,7 +119,7 @@ module.exports = {
               )
               res.status(401).send({
                 error: true,
-                message: `Finance transaction with id ${id} not found`,
+                message: `Financial transaction with id ${id} not found`,
                 result: null,
               })
             }else{
@@ -126,7 +132,7 @@ module.exports = {
                 )
                 res.status(200).send({
                   error: false,
-                  message: `Finance transaction successfully updated`,
+                  message: `Financial transaction successfully updated`,
                   result: null,
                 })
               })
@@ -149,14 +155,14 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: `Finance transaction with id: ${id} not found`,
+            message: `Financial transaction with id: ${id} not found`,
             result: null,
           })
         } else {
           financialTransactionRepository.delete(id).then(() => {
             res.status(200).send({
-              error: true,
-              message: "Finance transaction successfully deleted",
+              error: false,
+              message: "Financial transaction successfully deleted",
               result: null,
             })
           })
@@ -166,4 +172,73 @@ module.exports = {
         res.status(500).send(err.message)
       })
   },
+
+  getFinancialTransactionDaily(req, res){    
+    let daily = req.query.month
+    financialTransactionRepository
+      .getSummaryAmountByUserId(req.body.userId, {daily})
+      .then((val) => {        
+        let listSummary = []
+        if(val != null) {
+          for (let i = 0; i < val.length; i++) {
+            const e = val[i];                        
+            let obj = {
+              date: e.date,
+              totalAmount: e.totalAmount
+            } 
+            listSummary.push(obj)
+          }
+        }
+
+        Logger.debug(
+          req,
+          "USER_ID:" +
+            req.body.userId +
+            " SUCCESS GET SUMMARY DAILY FINANCE TRANSACTION BY USER ID"
+        )
+        res.status(200).send({
+          error: false,
+          message: "Get summary daily financial transaction",
+          result: val,
+        })
+      })
+      .catch((err) => {
+        res.status(500).send(err.message)
+      })
+  },
+
+  getFinancialTransactionMonthly(req, res){    
+    let monthly = req.query.year
+    financialTransactionRepository
+      .getSummaryAmountByUserId(req.body.userId, {monthly})
+      .then((val) => {                
+        let listSummary = []
+        if(val != null) {
+          for (let i = 0; i < val.length; i++) {
+            const e = val[0];                        
+            let tmp = new Date(e.date)
+            let obj = {
+              date: `${tmp.getFullYear()}-${tmp.getMonth()}`,
+              totalAmount: e.totalAmount
+            } 
+            listSummary.push(obj)
+          }
+        }
+
+        Logger.debug(
+          req,
+          "USER_ID:" +
+            req.body.userId +
+            " SUCCESS GET SUMMARY MONTHLY FINANCE TRANSACTION BY USER ID"
+        )
+        res.status(200).send({
+          error: false,
+          message: "Get summary monthly financial transaction",
+          result: val,
+        })
+      })
+      .catch((err) => {
+        res.status(500).send(err.message)
+      })
+  }
 }

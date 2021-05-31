@@ -11,6 +11,32 @@ var financialTransactionRouter = express.Router()
  *     description: this API for get all financial transaction with a user already logged
  *     security:
  *	     - jwt: []
+ *     parameters:
+ *       - in: query
+ *         name: page
+ *         required: true
+ *         description: Financial transaction paging {limit 10 item}
+ *         example: 1
+ *         schema:
+ *           type: integer
+ *       - in: query
+ *         name: type
+ *         required: false
+ *         description: Financial transaction type filtering
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: start_date
+ *         required: false
+ *         description: Financial transaction start_date filtering
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: end_date
+ *         required: false
+ *         description: Financial transaction end_date filtering
+ *         schema:
+ *           type: string
  *     requestBody:
  *       required: true
  *       content:
@@ -52,19 +78,19 @@ financialTransactionRouter.post(
  *                 example: 1
  *               financeAccountId:
  *                 type: Integer
- *                 description: Finance account id
+ *                 description: Financial account id
  *                 example: 1
  *               financeName:
  *                 type: String
- *                 description: Finance transaction name
+ *                 description: Financial transaction name
  *                 example: Hasan
  *               amount:
  *                 type: Integer
- *                 description: Finance transaction amount
+ *                 description: Financial transaction amount
  *                 example: 10000
  *               description:
  *                 type: String
- *                 description: Finance transaction description
+ *                 description: Financial transaction description
  *                 example: Food
  *     responses:
  *       200:
@@ -92,7 +118,7 @@ financialTransactionRouter.post(
  *             properties:
  *               id:
  *                 type: Integer
- *                 description: Finance transaction id
+ *                 description: Financial transaction id
  *                 example: 1
  *               userId:
  *                 type: Integer
@@ -100,19 +126,19 @@ financialTransactionRouter.post(
  *                 example: 1
  *               financeAccountId:
  *                 type: Integer
- *                 description: Finance account id
+ *                 description: Financial account id
  *                 example: 1
  *               financeName:
  *                 type: String
- *                 description: Finance transaction name
+ *                 description: Financial transaction name
  *                 example: Hasan
  *               amount:
  *                 type: Integer
- *                 description: Finance transaction amount
+ *                 description: Financial transaction amount
  *                 example: 10000
  *               description:
  *                 type: String
- *                 description: Finance transaction description
+ *                 description: Financial transaction description
  *                 example: Food
  *     responses:
  *       200:
@@ -154,6 +180,78 @@ financialTransactionRouter.post(
   "/",
   [authService.tokenVerify],
   financialTransactionService.deleteFinancialTransactionByUserIdAndId
+)
+
+/**
+ * @openapi
+ * /api/financialTransaction/summary/daily:
+ *   post:
+ *     description: this API for generating summary daily transaction
+ *     parameters:
+ *       - in: query
+ *         name: month
+ *         required: true
+ *         description: Financial transaction month
+ *         example: 5
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               userId:
+ *                 type: Integer
+ *                 description: The user's id
+ *                 example: 1
+ *     security:
+ *	     - jwt: []
+ *     responses:
+ *       200:
+ *         description: Return "Get summary daily financial transaction"
+ */
+ financialTransactionRouter.post(
+  "/summary/daily",
+  [authService.tokenVerify],
+  financialTransactionService.getFinancialTransactionDaily
+)
+
+/**
+ * @openapi
+ * /api/financialTransaction/summary/monthly:
+ *   post:
+ *     description: this API for generating monthly transaction summary
+ *     parameters:
+ *       - in: query
+ *         name: year
+ *         required: true
+ *         description: Financial transaction year
+ *         example: 2021
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               userId:
+ *                 type: Integer
+ *                 description: The user's id
+ *                 example: 1
+ *     security:
+ *	     - jwt: []
+ *     responses:
+ *       200:
+ *         description: Return "Get monthly financial transaction summary"
+ */
+ financialTransactionRouter.post(
+  "/summary/monthly",
+  [authService.tokenVerify],
+  financialTransactionService.getFinancialTransactionMonthly
 )
 
 

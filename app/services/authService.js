@@ -65,7 +65,7 @@ module.exports = {
           userRepository.add(req.body).then(() => {
             Logger.debug(req, `email: ${email} SUCCESS REGISTERED`)            
             res.status(200).send({
-              error: true,
+              error: false,
               message: "User successfully registered",
               result: null
             })
