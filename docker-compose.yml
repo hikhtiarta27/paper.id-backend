@@ -1,0 +1,30 @@
+version: "3.8"
+services:  
+  mysql:    
+    image: mysql:5.7
+    container_name: mysql
+    environment: 
+      MYSQL_ROOT_PASSWORD: root      
+    platform: "linux/x86_64"
+    volumes: 
+      - mysql-data:/etc/mysql/conf.d
+    networks:
+      - backend-network  
+  backend:
+    container_name: paper.id-backend
+    build: .
+    platform: "linux/x86_64"
+    environment: 
+      PORT: 3011
+      WAIT_HOSTS: mysql:3306
+    ports: 
+      - 3011:3011
+    networks:
+      - backend-network        
+    volumes: 
+      - .:/paper.id-backend      
+      - /paper.id-backend/node_modules/
+networks:
+  backend-network: 
+volumes: 
+  mysql-data:
