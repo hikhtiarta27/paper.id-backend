@@ -33,9 +33,11 @@ module.exports = {
             res.status(200).send({
               error: false,
               message: "Login successfully",
-              result: {
+              result: {                
+                email,
+                id: val.id,
+                lastLogin: new Date().toLocaleString(),
                 token,
-                email
               }
             })
           }
@@ -106,10 +108,11 @@ module.exports = {
   },
 
   logout(req, res) {
-    // Logger.debug(req, `email: ${req.body.email} SUCCESS USER LOGOUT`)
-    // _res.message = "Logout successfully"
-    // _res.error = false
-    // _res.result = null
-    // res.status(200).send(_res)
+    // Logger.debug(req, `email: ${req.body.email} SUCCESS USER LOGOUT`)    
+    res.status(200).send({
+      error: false,
+      message: "Logout successfully",
+      result: null
+    })
   },
 }

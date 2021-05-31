@@ -9,7 +9,9 @@ services:
     volumes: 
       - mysql-data:/etc/mysql/conf.d
     networks:
-      - backend-network  
+      - backend-network
+    ports: 
+      - 3306:3306
   backend:
     container_name: paper.id-backend
     build: .

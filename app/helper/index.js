@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt')
  */
 function dateToString(date){
   let x = new Date(date)    
-  return x.toLocaleDateString()
+  return x.toLocaleString()
 }
 
 /**
@@ -47,6 +47,15 @@ function stringToPhoneNumber(phoneNumber){
   return phoneNumber.replace(/\D+/g, '').replace(/(\d{4})(\d{4})(\d{2,})/, "$1-$2-$3");
 }
 
+/**
+ * 
+ * @param {Integer} amount 
+ * @returns 
+ */
+function currencyFormatter(x){
+  return x.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+}
+
 
 module.exports = {
   dateToString,
@@ -54,4 +63,5 @@ module.exports = {
   hashPassword,
   comparePassword,
   stringToPhoneNumber,
+  currencyFormatter
 }

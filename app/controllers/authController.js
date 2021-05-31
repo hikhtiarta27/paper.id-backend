@@ -59,6 +59,15 @@ apiRouter.post("/login", authService.login)
  *                 example: hasan ikhtiarta
  */
 apiRouter.post("/register", [middlewares.isValidEmail], authService.register)
+/**
+ * @openapi
+ * /api/auth/logout:
+ *   post:
+ *    description: This api for user to logout
+ *    responses:
+ *      200:
+ *        description: Return "User logout successfully"
+ */
 apiRouter.post("/logout", authService.logout)
 
 module.exports = apiRouter
