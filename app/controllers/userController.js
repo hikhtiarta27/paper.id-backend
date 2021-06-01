@@ -8,19 +8,21 @@ var userRouter = express.Router()
  * @openapi
  * /api/user/{email}:
  *   get:
- *     description: This api for getting user profile
+ *     description: API to get use profile. This API using JWT for authorization
  *     parameters:
  *       - in: path
  *         name: email
  *         required: true
- *         description: The user's email 
+ *         description: User's email
  *         schema:
  *           type: string
  *     security:
  *	     - jwt: []
  *     responses:
  *       200:
- *         description: Return "Get user successfully"
+ *         description: Get user successfully
+ *       401:
+ *         description: User not found
  */
 userRouter.get("/:email", [authService.tokenVerify], userService.getUserProfile)
 
@@ -28,12 +30,12 @@ userRouter.get("/:email", [authService.tokenVerify], userService.getUserProfile)
  * @openapi
  * /api/user/{email}:
  *   put:
- *     description: This api for updating user profile
+ *     description: API to update an existing user. This API using JWT for authorization
  *     parameters:
  *       - in: path
  *         name: email
  *         required: true
- *         description: The user's email 
+ *         description: User's email
  *         schema:
  *           type: string
  *     requestBody:
@@ -45,13 +47,15 @@ userRouter.get("/:email", [authService.tokenVerify], userService.getUserProfile)
  *             properties:
  *               name:
  *                 type: string
- *                 description: The user's full name
+ *                 description: User's full name
  *                 example: hasan ikhtiarta
  *     security:
  *	     - jwt: []
  *     responses:
  *       200:
- *         description: Return "Update user successfully"
+ *         description: Update user successfully
+ *       401:
+ *         description: User not found
  */
 userRouter.put("/:email", [authService.tokenVerify], userService.updateUser)
 
@@ -59,7 +63,7 @@ userRouter.put("/:email", [authService.tokenVerify], userService.updateUser)
  * @openapi
  * /api/user/{email}:
  *   delete:
- *     description: This api for deleting user
+ *     description: API to delete an existing user. This API using JWT for authorization
  *     parameters:
  *       - in: path
  *         name: email
@@ -71,7 +75,9 @@ userRouter.put("/:email", [authService.tokenVerify], userService.updateUser)
  *	     - jwt: []
  *     responses:
  *       200:
- *         description: Return "Delete user successfully"
+ *         description: Delete user successfully
+ *       401:
+ *         description: User not found
  */
 userRouter.delete("/:email", [authService.tokenVerify], userService.deleteUser)
 

@@ -2,10 +2,10 @@ const app = require("../../../app")
 const db = require("../../models")
 const userRepository = require("../userRepository")
 
-describe("userRepository", () => {
+describe("User repository", () => {
   beforeAll(async () => {
     await db.sequelize.sync({
-      force: true,
+      force: true
     })
   })
 
@@ -17,19 +17,64 @@ describe("userRepository", () => {
     done()
   })
 
-  test("get repo should be success : user exist", async (done) => {
+  test("get repo should be success : user created", async (done) => {
     let param = {
       email: "tes123@tes.com",
       password: "tes123@tes.com",
-      name: "tes",
-      address: "test",
-      phoneNumber: "081297991631",
+      name: "tes",      
     }
-    await userRepository.add(param)
-    userRepository.get(param.email).then((val) => {
-      expect(val).not.toBeNull()
-    })
-    done()
+    userRepository.add(param)
+    .then(()=>{
+      userRepository.get(param.email).then((val) => {
+        expect(val).not.toBeNull()
+        done()
+      })      
+    })        
+  })
+
+  test("update repo should be failed : user not found", async (done) => {
+    let email = "testing-email@email.com"
+    userRepository.update(email).then((val) => {      
+      expect(val[0]).toEqual(0)
+      done()
+    })    
+  })
+
+  test("update repo should be success : user updated", async (done) => {
+    let param = {
+      email: "hasan@tes.com",
+      password: "hasan@tes.com",
+      name: "tes1",      
+    }
+    userRepository.add(param).then(()=>{
+      userRepository.update(param, param.email).then((val) => {
+        expect(val).not.toBeNull()
+        done()
+      })      
+    })    
+  })
+
+  test("delete repo should be failed : user not found", async (done) => {
+    let email = "testing-email@email.com"
+    userRepository.delete(email).then((val) => {
+      expect(val).toEqual(0)
+      done()
+    })    
+  })
+
+  test("delete repo should be success : user deleted", async (done) => {
+    let param = {
+      email: "tes1@tes.com",
+      password: "1@tes.com",
+      name: "tes1",      
+    }
+    userRepository.add(param)        
+    .then(()=>{
+      userRepository.delete(param.email).then((val) => {
+        expect(val).not.toBeNull()
+        done()
+      })  
+    })    
   })
 
   afterAll(async () => {

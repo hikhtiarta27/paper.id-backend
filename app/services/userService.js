@@ -6,23 +6,30 @@ module.exports = {
   getUserProfile(req, res) {
     userRepository
       .get(req.params.email)
-      .then((val) => {
-        let obj = null
+      .then((val) => {        
         if (val != null) {
-          obj = {
+          let obj = {
             id: val.id,
             name: val.name,
             email: val.email,            
             createdAt: dateToString(val.createdAt),
             updatedAt: dateToString(val.updatedAt),
           }
+          Logger.debug(req, "email:" + req.params.email + " SUCCESS GET USER")
+          res.status(200).send({
+            error: false,
+            message: "Get user profile",
+            result: obj,
+          })
+        }else{
+          Logger.debug(req, "email:" + req.params.email + " FAILED GET USER NOT FOUND")
+          res.status(200).send({
+            error: true,
+            message: "User not found",
+            result: null,
+          })
         }
-        Logger.debug(req, "email:" + req.params.email + " SUCCESS GET USER")
-        res.status(200).send({
-          error: false,
-          message: "Get user profile",
-          result: obj,
-        })
+        
       })
       .catch((err) => {
         res.status(500).send(err.message)
@@ -40,7 +47,7 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: "Failed user not found",
+            message: "User not found",
             result: null,
           })
         } else {
@@ -78,7 +85,7 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: "Failed user not found",
+            message: "User not found",
             result: null,
           })
         } else {

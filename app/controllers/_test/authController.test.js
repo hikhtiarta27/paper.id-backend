@@ -1,6 +1,5 @@
 const db = require("../../models")
 const supertest = require("supertest")
-const faker = require("faker")
 const app = require("../../../app")
 
 describe("testing auth api", () => {
@@ -10,14 +9,14 @@ describe("testing auth api", () => {
 
   beforeAll(async () => {
     await db.sequelize.sync({
-      force: true,
+      force: true
     })
   })
 
   test("register should be success", async (done) => {
     const response = await supertest(app)
       .post("/api/auth/register")
-      .set("Content-Type", "application/x-www-form-urlencoded")
+      .set("Content-Type", "application/json")
       .send({ email, password, name })
       .expect(200)
 
@@ -32,7 +31,7 @@ describe("testing auth api", () => {
 
     const response = await supertest(app)
       .post("/api/auth/register")
-      .set("Content-Type", "application/x-www-form-urlencoded")
+      .set("Content-Type", "application/json")
       .send({ email, password, name })
       .expect(401)
 
@@ -43,10 +42,10 @@ describe("testing auth api", () => {
     done()
   })
 
-  test("register should be failed : user ady registered", async (done) => {
+  test("register should be failed : user already registered", async (done) => {
     const response = await supertest(app)
       .post("/api/auth/register")
-      .set("Content-Type", "application/x-www-form-urlencoded")
+      .set("Content-Type", "application/json")
       .send({ email, password, name })
       .expect(401)
 
@@ -60,7 +59,7 @@ describe("testing auth api", () => {
   test("login should be success", async (done) => {
     const response = await supertest(app)
       .post("/api/auth/login")
-      .set("Content-Type", "application/x-www-form-urlencoded")
+      .set("Content-Type", "application/json")
       .send({ email, password })
       .expect(200)
 
@@ -75,7 +74,7 @@ describe("testing auth api", () => {
 
     const response = await supertest(app)
       .post("/api/auth/login")
-      .set("Content-Type", "application/x-www-form-urlencoded")
+      .set("Content-Type", "application/json")
       .send({ email, password })
       .expect(401)
 
@@ -90,7 +89,7 @@ describe("testing auth api", () => {
 
     const response = await supertest(app)
       .post("/api/auth/login")
-      .set("Content-Type", "application/x-www-form-urlencoded")
+      .set("Content-Type", "application/json")
       .send({ email, password })
       .expect(401)
 

@@ -22,7 +22,7 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: `Financial account ID not found`,
+            message: `Financial account ${financialAccountId} not found`,
             result: null,
           })
         } else {
@@ -45,28 +45,32 @@ module.exports = {
 
   getFinancialTransactionByUserId(req, res) {
     let options = {
-      type: req.query.type != null ? req.query.type : null,
-      start_date: req.query.start_date != null ? req.query.start_date : null,
-      end_date: req.query.end_date != null ? req.query.end_date : null,
+      financeName:
+        req.query.finance_name != null ? req.query.finance_name : null,
+      financeAccount:
+        req.query.finance_account != null ? req.query.finance_account : null,
+      description: req.query.description != null ? req.query.description : null,
+      startDate: req.query.start_date != null ? req.query.start_date : null,
+      endDate: req.query.end_date != null ? req.query.end_date : null,
       page: req.query.page != null ? req.query.page : 1,
     }
     financialTransactionRepository
       .getByUserId(req.body.userId, options)
       .then((val) => {
         let listOfFinancialTransaction = []
-        if (val != null) {          
+        if (val != null) {
           for (let i = 0; i < val.length; i++) {
             let obj = {
               id: val[i].id,
               financeName: val[i].name,
-              financeAccount: val[i].FinancialAccount.name,
+              financeAccountName: val[i].FinancialAccount.name,
               amount: {
                 raw: val[i].amount,
                 format: `Rp ${currencyFormatter(val[i].amount)}.00`,
               },
               description: val[i].description,
               transactionDate: dateToString(val[i].createdAt),
-              updatedAt: dateToString(val[i].updatedAt),
+              // updatedAt: dateToString(val[i].updatedAt),
             }
             listOfFinancialTransaction.push(obj)
           }
@@ -110,34 +114,35 @@ module.exports = {
             result: null,
           })
         } else {
-          financialTransactionRepository.getByUserIdAndId(userId, id)
-          .then(val=>{
-            if(val == null){
-              Logger.debug(
-                req,
-                `USER_ID: ${userId} FAILED UPDATE FINANCE TRANSACTION ID NOT FOUND`
-              )
-              res.status(401).send({
-                error: true,
-                message: `Financial transaction with id ${id} not found`,
-                result: null,
-              })
-            }else{
-              financialTransactionRepository
-              .update({ financialAccountId, name, amount, description }, id)
-              .then(() => {
+          financialTransactionRepository
+            .getByUserIdAndId(userId, id)
+            .then((val) => {
+              if (val == null) {
                 Logger.debug(
                   req,
-                  `USER_ID: ${userId} SUCCESS UPDATE FINANCE TRANSACTION`
+                  `USER_ID: ${userId} FAILED UPDATE FINANCE TRANSACTION ID NOT FOUND`
                 )
-                res.status(200).send({
-                  error: false,
-                  message: `Financial transaction successfully updated`,
+                res.status(401).send({
+                  error: true,
+                  message: `Financial transaction with id ${id} not found`,
                   result: null,
                 })
-              })
-            }
-          })                  
+              } else {
+                financialTransactionRepository
+                  .update({ financialAccountId, name, amount, description }, id)
+                  .then(() => {
+                    Logger.debug(
+                      req,
+                      `USER_ID: ${userId} SUCCESS UPDATE FINANCE TRANSACTION`
+                    )
+                    res.status(200).send({
+                      error: false,
+                      message: `Financial transaction successfully updated`,
+                      result: null,
+                    })
+                  })
+              }
+            })
         }
       })
   },
@@ -155,7 +160,7 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: `Financial transaction with id: ${id} not found`,
+            message: `Financial transaction ${id} not found`,
             result: null,
           })
         } else {
@@ -173,19 +178,22 @@ module.exports = {
       })
   },
 
-  getFinancialTransactionDaily(req, res){    
+  getFinancialTransactionDaily(req, res) {
     let daily = req.query.month
     financialTransactionRepository
-      .getSummaryAmountByUserId(req.body.userId, {daily})
-      .then((val) => {        
+      .getSummaryAmountByUserId(req.body.userId, { daily })
+      .then((val) => {
         let listSummary = []
-        if(val != null) {
+        if (val != null) {
           for (let i = 0; i < val.length; i++) {
-            const e = val[i];                        
+            const e = val[i].dataValues
             let obj = {
               date: e.date,
-              totalAmount: e.totalAmount
-            } 
+              totalAmount: {
+                raw: parseInt(e.totalAmount),
+                format: `Rp ${currencyFormatter(e.totalAmount)}.00`,
+              },
+            }
             listSummary.push(obj)
           }
         }
@@ -199,7 +207,7 @@ module.exports = {
         res.status(200).send({
           error: false,
           message: "Get summary daily financial transaction",
-          result: val,
+          result: listSummary,
         })
       })
       .catch((err) => {
@@ -207,20 +215,22 @@ module.exports = {
       })
   },
 
-  getFinancialTransactionMonthly(req, res){    
+  getFinancialTransactionMonthly(req, res) {
     let monthly = req.query.year
     financialTransactionRepository
-      .getSummaryAmountByUserId(req.body.userId, {monthly})
-      .then((val) => {                
+      .getSummaryAmountByUserId(req.body.userId, { monthly })
+      .then((val) => {
         let listSummary = []
-        if(val != null) {
+        if (val != null) {
           for (let i = 0; i < val.length; i++) {
-            const e = val[0];                        
-            let tmp = new Date(e.date)
+            const e = val[i].dataValues
             let obj = {
-              date: `${tmp.getFullYear()}-${tmp.getMonth()}`,
-              totalAmount: e.totalAmount
-            } 
+              date: `${e.year}-${e.month < 10 ? `0${e.month}` : e.month}`,
+              totalAmount: {
+                raw: parseInt(e.totalAmount),
+                format: `Rp ${currencyFormatter(e.totalAmount)}.00`,
+              },
+            }
             listSummary.push(obj)
           }
         }
@@ -234,11 +244,22 @@ module.exports = {
         res.status(200).send({
           error: false,
           message: "Get summary monthly financial transaction",
-          result: val,
+          result: listSummary,
         })
       })
       .catch((err) => {
         res.status(500).send(err.message)
       })
+  },
+
+  restoreAll(req, res){
+    financialTransactionRepository.restore()
+    .then(val=>{
+      res.status(200).send({
+        error: false,
+        message: "Financial transaction has been restored",
+        result: null
+      })
+    })
   }
 }

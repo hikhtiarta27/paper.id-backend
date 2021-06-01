@@ -3,17 +3,6 @@ const FinancialAccount = require("../models").FinancialAccount
 const Sequelize = require("sequelize")
 
 module.exports = {
-  // /**
-  //  *
-  //  * @param {Integer} id
-  //  * @returns
-  //  */
-  // get(id) {
-  //   return FinancialTransaction.findOne({
-  //     where: { id },
-  //   })
-  // },
-
   /**
    *
    * @param {Object} param
@@ -57,6 +46,13 @@ module.exports = {
    */
   getByUserId(userId, options = null) {
     let obj = {}
+    let includeField = [
+      {
+        model: FinancialAccount,
+        where: { userId },
+        attibutes: ["name"],
+      },
+    ]
 
     if (options.type != null) {
       obj["type"] = {
@@ -64,33 +60,59 @@ module.exports = {
       }
     }
 
-    if (options.start_date != null && options.end_date != null) {
+    if (options.financeName != null) {
+      obj["name"] = {
+        [Sequelize.Op.like]: `%${options.financeName}%`,
+      }
+    }
+
+    if (options.financeAccount != null) {
+      includeField = [
+        {
+          model: FinancialAccount,
+          where: {
+            userId,
+            name: {
+              [Sequelize.Op.like]: `%${options.financeAccount}%`,
+            },
+          },
+          attibutes: ["name"],
+        },
+      ]
+    }
+
+    if (options.description != null) {
+      obj["description"] = {
+        [Sequelize.Op.like]: `%${options.description}%`,
+      }
+    }
+
+    if (options.startDate != null && options.endDate != null) {
+      let endDate = new Date(options.endDate)
+      endDate.setDate(endDate.getDate() + 1)
       obj["createdAt"] = {
-        [Sequelize.Op.gte]: new Date(options.start_date),
-        [Sequelize.Op.lte]: new Date(options.end_date),
+        [Sequelize.Op.gte]: new Date(options.startDate),
+        [Sequelize.Op.lte]: endDate,
       }
     } else {
-      if (options.start_date != null) {
+      if (options.startDate != null) {
         obj["createdAt"] = {
-          [Sequelize.Op.gte]: new Date(options.start_date),
+          [Sequelize.Op.gte]: new Date(options.startDate),
         }
       }
-      if (options.end_date != null) {
+      if (options.endDate != null) {
+        let endDate = new Date(options.endDate)
+        endDate.setDate(endDate.getDate() + 1)
         obj["createdAt"] = {
-          [Sequelize.Op.lte]: new Date(options.end_date),
+          [Sequelize.Op.lte]: endDate,
         }
       }
     }
 
     let queryOptions = {
       where: obj,
-      include: [
-        {
-          model: FinancialAccount,
-          where: { userId },
-          attibutes: ["name"],
-        },
-      ],
+      include: includeField,
+      order: [["id", "DESC"]],
     }
 
     let offset = options.page * 10
@@ -147,34 +169,6 @@ module.exports = {
 
     if (options.daily != null) {
       let today = new Date()
-      // let todayStr = `${today.getFullYear()}-${
-      //   today.getMonth() + 1
-      // }-${today.getDate()}`
-      // let lastWeek = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000)
-      // let lastWeekStr = `${lastWeek.getFullYear()}-${
-      //   lastWeek.getMonth() + 1
-      // }-${lastWeek.getDate()}`
-      // obj = {
-      //   [Sequelize.Op.and]: [
-      //     Sequelize.where(
-      //       Sequelize.fn(
-      //         "date",
-      //         Sequelize.col("FinancialTransaction.createdAt")
-      //       ),
-      //       ">=",
-      //       lastWeekStr
-      //     ),
-      //     Sequelize.where(
-      //       Sequelize.fn(
-      //         "date",
-      //         Sequelize.col("FinancialTransaction.createdAt")
-      //       ),
-      //       "<=",
-      //       todayStr
-      //     ),
-      //   ],
-      // }
-
       obj = {
         [Sequelize.Op.and]: [
           Sequelize.where(
@@ -193,11 +187,14 @@ module.exports = {
             "=",
             today.getFullYear()
           ),
-        ]
+        ],
       }
 
-      attributesField = [        
-        [Sequelize.fn("DATE", Sequelize.col("FinancialTransaction.createdAt")), "date"],        
+      attributesField = [
+        [
+          Sequelize.fn("DATE", Sequelize.col("FinancialTransaction.createdAt")),
+          "date",
+        ],
         [Sequelize.fn("sum", Sequelize.col("amount")), "totalAmount"],
       ]
 
@@ -205,24 +202,29 @@ module.exports = {
         Sequelize.fn("DATE", Sequelize.col("FinancialTransaction.createdAt")),
         // "FinancialAccount.id",
       ]
-    }    
+    }
 
-    if (options.monthly != null) {            
+    if (options.monthly != null) {
       obj = {
         createdAt: Sequelize.where(
-          Sequelize.fn(
-            "year",
-            Sequelize.col("FinancialTransaction.createdAt")
-          ),
+          Sequelize.fn("year", Sequelize.col("FinancialTransaction.createdAt")),
           "=",
           options.monthly
         ),
       }
-      
 
-      attributesField = [        
-        [Sequelize.fn("month", Sequelize.col("FinancialTransaction.createdAt")), "month"],
-        [Sequelize.fn("year", Sequelize.col("FinancialTransaction.createdAt")), "year"],
+      attributesField = [
+        [
+          Sequelize.fn(
+            "month",
+            Sequelize.col("FinancialTransaction.createdAt")
+          ),
+          "month",
+        ],
+        [
+          Sequelize.fn("year", Sequelize.col("FinancialTransaction.createdAt")),
+          "year",
+        ],
         [Sequelize.fn("sum", Sequelize.col("amount")), "totalAmount"],
       ]
 
@@ -239,13 +241,21 @@ module.exports = {
       include: [
         {
           model: FinancialAccount,
-          where: { userId },    
-          attributes: []                
+          where: { userId },
+          attributes: [],
         },
       ],
-      group: groupField,      
+      group: groupField,
     }
 
     return FinancialTransaction.findAll(queryOptions)
+  },
+
+/**
+ * 
+ * @returns 
+ */
+  restore(){
+    return FinancialTransaction.restore()
   },
 }

@@ -83,7 +83,7 @@ module.exports = {
     if (token == null) {
       res.status(401).send({
         error: true,
-        message: "Missing Authorization",
+        message: "Authorization header is missing",
         result: null,
       })
     }

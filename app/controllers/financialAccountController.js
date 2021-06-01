@@ -8,7 +8,7 @@ var financialAccountRouter = express.Router()
  * @openapi
  * /api/financialAccount/getAllListFinancialAccount:
  *   post:
- *     description: this API for get all financial account with a user already logged
+ *     description: API for get all financial account with a user already logged. This API using JWT for authorization
  *     security:
  *	     - jwt: []
  *     parameters:
@@ -22,19 +22,22 @@ var financialAccountRouter = express.Router()
  *       - in: query
  *         name: type
  *         required: false
- *         description: Financial account type filtering
+ *         description: Filtering by type
+ *         example: bank
  *         schema:
  *           type: string
  *       - in: query
  *         name: start_date
  *         required: false
- *         description: Financial account start_date filtering
+ *         description: Filtering by start date
+ *         example: 2021-05-31
  *         schema:
  *           type: string
  *       - in: query
  *         name: end_date
  *         required: false
- *         description: Financial account end_date filtering
+ *         description: Filtering by end date
+ *         example: 2021-05-31
  *         schema:
  *           type: string
  *     requestBody:
@@ -46,11 +49,11 @@ var financialAccountRouter = express.Router()
  *             properties:
  *               userId:
  *                 type: Integer
- *                 description: The user's id
+ *                 description: User's id from JWT payload
  *                 example: 1
  *     responses:
  *       200:
- *         description: Return "Financial account with name {name} successfully created"
+ *         description: Get financial account by user id
  */
 financialAccountRouter.post(
   "/getAllListFinancialAccount",
@@ -62,7 +65,7 @@ financialAccountRouter.post(
  * @openapi
  * /api/financialAccount:
  *   post:
- *     description: this API for creating a financial account with a user already logged
+ *     description: API to create a new financial account with a user already logged. This API using JWT for authorization
  *     security:
  *	     - jwt: []
  *     requestBody:
@@ -74,7 +77,7 @@ financialAccountRouter.post(
  *             properties:
  *               userId:
  *                 type: Integer
- *                 description: The user's id
+ *                 description: User's id from JWT payload
  *                 example: 1
  *               accountName:
  *                 type: String
@@ -90,7 +93,9 @@ financialAccountRouter.post(
  *                 example: Cash flow
  *     responses:
  *       200:
- *         description: Return "Financial account with name {name} successfully created"
+ *         description: Financial account {name} successfully created
+ *       401:
+ *         description: Financial account {name} already registered
  */
 financialAccountRouter.post(
   "/",
@@ -102,7 +107,7 @@ financialAccountRouter.post(
  * @openapi
  * /api/financialAccount:
  *   put:
- *     description: this API for updating a financial account with a user already logged
+ *     description: API to update an existing financial account with a user already logged. This API using JWT for authorization
  *     requestBody:
  *       required: true
  *       content:
@@ -112,7 +117,7 @@ financialAccountRouter.post(
  *             properties:
  *               userId:
  *                 type: Integer
- *                 description: The user's id
+ *                 description: User's id from JWT payload
  *                 example: 1
  *               id:
  *                 type: Integer
@@ -134,7 +139,9 @@ financialAccountRouter.post(
  *	     - jwt: []
  *     responses:
  *       200:
- *         description: Return "Financial account successfully updated"
+ *         description: Financial account successfully updated
+ *       401:
+ *         description: Financial account {id} not found
  */
 financialAccountRouter.put(
   "/",
@@ -146,7 +153,7 @@ financialAccountRouter.put(
  * @openapi
  * /api/financialAccount:
  *   delete:
- *     description: this API for deleting a financial account with a user already logged
+ *     description: API to delete an existing financial account with a user already logged. This API using JWT for authorization
  *     requestBody:
  *       required: true
  *       content:
@@ -156,7 +163,7 @@ financialAccountRouter.put(
  *             properties:
  *               userId:
  *                 type: Integer
- *                 description: The user's id
+ *                 description: User's id from JWT payload
  *                 example: 1
  *               id:
  *                 type: Integer
@@ -166,12 +173,31 @@ financialAccountRouter.put(
  *	     - jwt: []
  *     responses:
  *       200:
- *         description: Return "Financial account successfully deleted"
+ *         description: Financial account successfully deleted
+ *       401:
+ *         description: Financial account {id} not found || Financial account {id} still in use
  */
 financialAccountRouter.delete(
   "/",
   [authService.tokenVerify],
   financialAccountService.deleteFinancialAccountByUserIdAndId
+)
+
+/**
+ * @openapi
+ * /api/financialAccount/restore:
+ *   post:
+ *     description: API to restore all financial account. This API using JWT for authorization
+ *     security:
+ *	     - jwt: []
+ *     responses:
+ *       200:
+ *         description: Financial account has been restored
+ */
+ financialAccountRouter.post(
+  "/restore",
+  [authService.tokenVerify],
+  financialAccountService.restoreAll
 )
 
 module.exports = financialAccountRouter

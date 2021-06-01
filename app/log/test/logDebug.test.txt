@@ -353,3 +353,91 @@
 [5/19/2021 11:24:54 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
 [5/19/2021 11:24:54 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
 [5/19/2021 11:24:54 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:32:50 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 7:32:50 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 7:32:50 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:32:51 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 7:32:51 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:32:51 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:35:58 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:35:58 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 7:35:58 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:35:58 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 7:35:58 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:35:58 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:37:30 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 7:37:30 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 7:37:30 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:37:30 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 7:37:30 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:37:30 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:38:50 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:38:50 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 7:38:50 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:38:50 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 7:38:51 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:38:51 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:42:08 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 7:42:08 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 7:42:08 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:42:08 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 7:42:08 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:42:08 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:44:47 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 7:44:47 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 7:44:47 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:44:47 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 7:44:47 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:44:47 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:44:51 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 7:45:40 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 7:45:40 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 7:45:40 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:45:41 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 7:45:41 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:45:41 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:45:46 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 7:48:02 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 7:48:02 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 7:48:02 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:48:02 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 7:48:02 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:48:02 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:48:05 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 7:49:15 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 7:49:15 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 7:49:15 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:49:15 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 7:49:15 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:49:15 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:49:20 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 7:50:17 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 7:50:20 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 7:50:20 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 7:50:20 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:50:20 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 7:50:20 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:50:20 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:53:27 AM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email: undefined FAILED jwt malformed
+[6/1/2021 7:53:27 AM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email: undefined FAILED jwt malformed
+[6/1/2021 7:53:27 AM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email: undefined FAILED jwt malformed
+[6/1/2021 7:53:27 AM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email: undefined FAILED jwt malformed
+[6/1/2021 7:53:27 AM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email: user-test-notfound@gmail.com FAILED jwt malformed
+[6/1/2021 7:53:29 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 7:53:29 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 7:53:29 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:53:29 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 7:53:29 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:53:30 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 7:54:33 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 7:54:33 AM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 7:54:33 AM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 7:54:33 AM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:54:33 AM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 7:54:33 AM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:54:35 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 7:54:35 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 7:54:35 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 7:54:35 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 7:54:35 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 7:54:35 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH

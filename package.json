@@ -4,11 +4,12 @@
   "description": "nodejs_backend_scrap",
   "main": "server.js",
   "scripts": {
-    "initialize:db-dev": "sequelize-cli db:create",
-    "initialize:db-test": "NODE_ENV=test sequelize-cli db:create",
-    "initialize:db-prod": "NODE_ENV=production sequelize-cli db:create",
+    "init:db-dev": "sequelize-cli db:create",
+    "init:db-test": "NODE_ENV=test sequelize-cli db:create",
+    "init:db-prod": "NODE_ENV=production sequelize-cli db:create",
     "dev": "nodemon server.js",
-    "test": "NODE_ENV=test jest --detectOpenHandles",
+    "test": "NODE_ENV=test jest --verbose --runInBand",
+    "drop:db-test": "NODE_ENV=test sequelize-cli db:drop",
     "production": "NODE_ENV=production nodemon server.js"
   },
   "author": "hasan.ikhtiarta",

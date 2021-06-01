@@ -8,7 +8,7 @@ var financialTransactionRouter = express.Router()
  * @openapi
  * /api/financialTransaction/getAllListFinancialTransaction:
  *   post:
- *     description: this API for get all financial transaction with a user already logged
+ *     description: API to get all financial transaction with a user already logged. This API using JWT for authorization
  *     security:
  *	     - jwt: []
  *     parameters:
@@ -20,21 +20,38 @@ var financialTransactionRouter = express.Router()
  *         schema:
  *           type: integer
  *       - in: query
- *         name: type
+ *         name: finance_name
  *         required: false
- *         description: Financial transaction type filtering
+ *         description: Filtering by finance name
+ *         example: hasan
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: finance_account
+ *         required: false
+ *         description: Filtering by finance account name
+ *         example: cash
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: description
+ *         required: false
+ *         description: Filtering by description
+ *         example: dog food
  *         schema:
  *           type: string
  *       - in: query
  *         name: start_date
  *         required: false
- *         description: Financial transaction start_date filtering
+ *         description: Filtering by start date
+ *         example: 2021-05-31
  *         schema:
  *           type: string
  *       - in: query
  *         name: end_date
  *         required: false
- *         description: Financial transaction end_date filtering
+ *         description: Filtering by end date
+ *         example: 2021-05-31
  *         schema:
  *           type: string
  *     requestBody:
@@ -46,11 +63,11 @@ var financialTransactionRouter = express.Router()
  *             properties:
  *               userId:
  *                 type: Integer
- *                 description: The user's id
+ *                 description: User's id from JWT payload
  *                 example: 1
  *     responses:
  *       200:
- *         description: Return "Get financial transaction by user id"
+ *         description: Get financial transaction by user id
  */
 financialTransactionRouter.post(
   "/getAllListFinancialTransaction",
@@ -62,7 +79,7 @@ financialTransactionRouter.post(
  * @openapi
  * /api/financialTransaction:
  *   post:
- *     description: this API for creating new financial transaction with a user already logged
+ *     description: API to create a new financial transaction with a user already logged. This API using JWT for authorization
  *     security:
  *	     - jwt: []
  *     requestBody:
@@ -74,7 +91,7 @@ financialTransactionRouter.post(
  *             properties:
  *               userId:
  *                 type: Integer
- *                 description: The user's id
+ *                 description: User's id from JWT payload
  *                 example: 1
  *               financeAccountId:
  *                 type: Integer
@@ -94,7 +111,9 @@ financialTransactionRouter.post(
  *                 example: Food
  *     responses:
  *       200:
- *         description: Return "Financial transaction successfully created"
+ *         description: Financial transaction successfully created
+ *       401:
+ *         description: Financial account {id} not found
  */
 financialTransactionRouter.post(
   "/",
@@ -106,7 +125,7 @@ financialTransactionRouter.post(
  * @openapi
  * /api/financialTransaction:
  *   put:
- *     description: this API for updating financial transaction with a user already logged
+ *     description: API to update an existing financial transaction with a user already logged. This API using JWT for authorization
  *     security:
  *	     - jwt: []
  *     requestBody:
@@ -122,7 +141,7 @@ financialTransactionRouter.post(
  *                 example: 1
  *               userId:
  *                 type: Integer
- *                 description: The user's id
+ *                 description: User's id from JWT payload
  *                 example: 1
  *               financeAccountId:
  *                 type: Integer
@@ -142,9 +161,11 @@ financialTransactionRouter.post(
  *                 example: Food
  *     responses:
  *       200:
- *         description: Return "Financial transaction successfully updated"
+ *         description: Financial transaction successfully updated
+ *       401:
+ *         description: Financial account {id} not found || Financial transaction {id} not found
  */
- financialTransactionRouter.put(
+financialTransactionRouter.put(
   "/",
   [authService.tokenVerify],
   financialTransactionService.updateFinancialTransaction
@@ -154,7 +175,7 @@ financialTransactionRouter.post(
  * @openapi
  * /api/financialTransaction:
  *   delete:
- *     description: this API for deleting a financial transaction with a user already logged
+ *     description: API to delete an existing financial transaction with a user already logged. This API using JWT for authorization
  *     requestBody:
  *       required: true
  *       content:
@@ -164,7 +185,7 @@ financialTransactionRouter.post(
  *             properties:
  *               userId:
  *                 type: Integer
- *                 description: The user's id
+ *                 description: User's id from JWT payload
  *                 example: 1
  *               id:
  *                 type: Integer
@@ -174,9 +195,11 @@ financialTransactionRouter.post(
  *	     - jwt: []
  *     responses:
  *       200:
- *         description: Return "Financial transaction successfully deleted"
+ *         description: Financial transaction successfully deleted
+ *       401:
+ *         description: Financial transaction {id} not found
  */
- financialTransactionRouter.delete(
+financialTransactionRouter.delete(
   "/",
   [authService.tokenVerify],
   financialTransactionService.deleteFinancialTransactionByUserIdAndId
@@ -186,12 +209,12 @@ financialTransactionRouter.post(
  * @openapi
  * /api/financialTransaction/summary/daily:
  *   post:
- *     description: this API for generating summary daily transaction
+ *     description: API to generate summary daily transactions. This API using JWT for authorization
  *     parameters:
  *       - in: query
  *         name: month
  *         required: true
- *         description: Financial transaction month
+ *         description: Financial transaction in a month
  *         example: 5
  *         schema:
  *           type: integer
@@ -204,15 +227,15 @@ financialTransactionRouter.post(
  *             properties:
  *               userId:
  *                 type: Integer
- *                 description: The user's id
+ *                 description: User's id from JWT payload
  *                 example: 1
  *     security:
  *	     - jwt: []
  *     responses:
  *       200:
- *         description: Return "Get summary daily financial transaction"
+ *         description: Get summary daily financial transaction
  */
- financialTransactionRouter.post(
+financialTransactionRouter.post(
   "/summary/daily",
   [authService.tokenVerify],
   financialTransactionService.getFinancialTransactionDaily
@@ -222,12 +245,12 @@ financialTransactionRouter.post(
  * @openapi
  * /api/financialTransaction/summary/monthly:
  *   post:
- *     description: this API for generating monthly transaction summary
+ *     description: API to generate summary monthly transactions. This API using JWT for authorization
  *     parameters:
  *       - in: query
  *         name: year
  *         required: true
- *         description: Financial transaction year
+ *         description: Financial transaction in a year
  *         example: 2021
  *         schema:
  *           type: integer
@@ -240,19 +263,35 @@ financialTransactionRouter.post(
  *             properties:
  *               userId:
  *                 type: Integer
- *                 description: The user's id
+ *                 description: User's id from JWT payload
  *                 example: 1
  *     security:
  *	     - jwt: []
  *     responses:
  *       200:
- *         description: Return "Get monthly financial transaction summary"
+ *         description: Get monthly financial transaction summary
  */
- financialTransactionRouter.post(
+financialTransactionRouter.post(
   "/summary/monthly",
   [authService.tokenVerify],
   financialTransactionService.getFinancialTransactionMonthly
 )
 
+/**
+ * @openapi
+ * /api/financialTransaction/restore:
+ *   post:
+ *     description: API to restore all financial transaction. This API using JWT for authorization
+ *     security:
+ *	     - jwt: []
+ *     responses:
+ *       200:
+ *         description: Financial transaction has been restored
+ */
+ financialTransactionRouter.post(
+  "/restore",
+  [authService.tokenVerify],
+  financialTransactionService.restoreAll
+)
 
 module.exports = financialTransactionRouter

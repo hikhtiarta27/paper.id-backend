@@ -11,4 +11,4 @@ RUN chmod +x /wait
 
 RUN npm install
 RUN npm install -g nodemon
-CMD /wait && npm run initialize:db-dev && npm run dev
+CMD /wait && npm run init:db-dev && npm run dev

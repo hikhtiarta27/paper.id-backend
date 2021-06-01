@@ -8,10 +8,12 @@ var apiRouter = express.Router()
  * @openapi
  * /api/auth/login:
  *   post:
- *    description: This api for user to login
+ *    description: API for user to login to system
  *    responses:
  *      200:
- *        description: Return "Login successfully"
+ *        description: Login successfully 
+ *      401:
+ *        description: User not found || Password didn't match
  *    requestBody:
  *       required: true
  *       content:
@@ -21,11 +23,11 @@ var apiRouter = express.Router()
  *             properties:
  *               email:
  *                 type: string
- *                 description: The user's email
+ *                 description: User's email
  *                 example: hasan.ikhtiarta@gmail.com
  *               password:
  *                 type: string
- *                 description: The user's password
+ *                 description: User's password
  *                 example: hasan123
  */
 apiRouter.post("/login", authService.login)
@@ -34,10 +36,12 @@ apiRouter.post("/login", authService.login)
  * @openapi
  * /api/auth/register:
  *   post:
- *    description: This api for user to register
+ *    description: API for register new user to system
  *    responses:
  *      200:
- *        description: Return "User successfully registered"
+ *        description: User successfully registered
+ *      401:
+ *        description: User already registered
  *    requestBody:
  *       required: true
  *       content:
@@ -47,15 +51,15 @@ apiRouter.post("/login", authService.login)
  *             properties:
  *               email:
  *                 type: string
- *                 description: The user's email
+ *                 description: User's email
  *                 example: hasan.ikhtiarta@gmail.com
  *               password:
  *                 type: string
- *                 description: The user's password
+ *                 description: User's password
  *                 example: hasan123
  *               name:
  *                 type: string
- *                 description: The user's full name
+ *                 description: User's name
  *                 example: hasan ikhtiarta
  */
 apiRouter.post("/register", [middlewares.isValidEmail], authService.register)
@@ -63,10 +67,10 @@ apiRouter.post("/register", [middlewares.isValidEmail], authService.register)
  * @openapi
  * /api/auth/logout:
  *   post:
- *    description: This api for user to logout
+ *    description: API for logout from system
  *    responses:
  *      200:
- *        description: Return "User logout successfully"
+ *        description: Logout succesfully
  */
 apiRouter.post("/logout", authService.logout)
 

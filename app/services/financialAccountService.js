@@ -21,7 +21,7 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: `Financial account with name: ${name} already registered`,
+            message: `Financial account ${name} already registered`,
             result: null,
           })
         } else {
@@ -34,7 +34,7 @@ module.exports = {
               )
               res.status(200).send({
                 error: false,
-                message: `Financial account with name: ${name} successfully created`,
+                message: `Financial account ${name} successfully created`,
                 result: null,
               })
             })
@@ -48,8 +48,8 @@ module.exports = {
   getFinancialAccountByUserId(req, res) {
     let options = {
       type: req.query.type != null ? req.query.type : null,
-      start_date: req.query.start_date != null ? req.query.start_date : null,
-      end_date: req.query.end_date != null ? req.query.end_date : null,
+      startDate: req.query.start_date != null ? req.query.start_date : null,
+      endDate: req.query.end_date != null ? req.query.end_date : null,
       page: req.query.page != null ? req.query.page : 1,
     }
     financialAccountRepository
@@ -102,7 +102,7 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: `Financial account with id: ${id} not found`,
+            message: `Financial account ${id} not found`,
             result: null,
           })
         } else {
@@ -139,7 +139,7 @@ module.exports = {
           )
           res.status(401).send({
             error: true,
-            message: `Financial account with id: ${id} not found`,
+            message: `Financial account ${id} not found`,
             result: null,
           })
         } else {
@@ -152,7 +152,7 @@ module.exports = {
               )
               res.status(401).send({
                 error: true,
-                message: `Financial account with id: ${id} still in use`,
+                message: `Financial account ${id} still in use`,
                 result: null,
               })
             }else{
@@ -178,4 +178,15 @@ module.exports = {
         res.status(500).send(err.message)
       })
   },
+
+  restoreAll(req, res){
+    financialAccountRepository.restore()
+    .then(val=>{
+      res.status(200).send({
+        error: false,
+        message: "Financial account has been restored",
+        result: null
+      })
+    })
+  }
 }
