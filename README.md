@@ -23,7 +23,7 @@ The recommended way to get started using this application is by using docker-com
 docker-compose up
 ```
 
-If you are'nt using docker/docker-compose. You need to change the configuration a little bit from `.env`. You can run this application by
+If you are'nt using docker/docker-compose, you need to change the configuration a little bit from `.env`. and run this application by
 
 ```bash
 cd paper.id-backend && node server.js
