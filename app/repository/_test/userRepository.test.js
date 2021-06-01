@@ -2,7 +2,7 @@ const app = require("../../../app")
 const db = require("../../models")
 const userRepository = require("../userRepository")
 
-describe("User repository", () => {
+describe("UserRepository", () => {
   beforeAll(async () => {
     await db.sequelize.sync({
       force: true

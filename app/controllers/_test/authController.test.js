@@ -2,7 +2,7 @@ const db = require("../../models")
 const supertest = require("supertest")
 const app = require("../../../app")
 
-describe("testing auth api", () => {
+describe("authController", () => {
   let email = "user-test@gmail.com"
   let password = "user-test"
   let name = "user-test"  

@@ -4,7 +4,7 @@ const faker = require("faker")
 const app = require("../../../app")
 const userRepository = require("../../repository/userRepository")
 
-describe("testing user api", () => {
+describe("userController", () => {
   let email = "user-test1@gmail.com"
   let password = "user-test1"
   let name = "user-test1"  

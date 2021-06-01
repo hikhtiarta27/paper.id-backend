@@ -441,3 +441,404 @@
 [6/1/2021 7:54:35 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
 [6/1/2021 7:54:35 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
 [6/1/2021 7:54:35 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 11:47:37 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:47:43 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:47:43 AM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 11:47:43 AM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 11:47:43 AM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:47:43 AM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 11:47:43 AM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:47:45 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 11:47:45 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 11:47:45 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 11:47:45 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 11:47:45 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:47:45 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 11:49:14 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:49:19 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:49:20 AM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 11:49:20 AM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 11:49:20 AM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:49:20 AM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 11:49:20 AM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:49:22 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 11:49:22 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 11:49:22 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 11:49:22 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 11:49:22 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:49:22 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 11:50:38 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:50:44 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:50:44 AM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 11:50:44 AM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 11:50:44 AM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:50:44 AM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 11:50:44 AM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:50:46 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 11:50:46 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 11:50:46 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 11:50:46 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 11:50:46 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:50:46 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 11:52:59 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:52:59 AM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 11:52:59 AM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 11:52:59 AM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 11:52:59 AM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:53:00 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 11:53:00 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:53:00 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:53:00 AM] /api/financialAccount/getAllListFinancialAccount POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 11:53:06 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:53:06 AM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 11:53:06 AM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 11:53:06 AM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:53:06 AM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 11:53:06 AM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:53:08 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 11:53:08 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 11:53:08 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 11:53:08 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 11:53:08 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:53:08 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 11:54:27 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:54:27 AM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 11:54:27 AM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 11:54:27 AM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 11:54:27 AM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:54:28 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 11:54:28 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:54:28 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:54:28 AM] /api/financialAccount/getAllListFinancialAccount POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 11:54:33 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:54:33 AM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 11:54:33 AM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 11:54:33 AM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:54:33 AM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 11:54:33 AM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:54:37 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 11:54:37 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 11:54:37 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 11:54:37 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 11:54:37 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:54:37 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 11:56:06 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:56:06 AM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 11:56:06 AM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 11:56:06 AM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 11:56:06 AM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:56:06 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 11:56:06 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:56:06 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:56:06 AM] /api/financialAccount/getAllListFinancialAccount POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 11:56:12 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:56:12 AM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 11:56:12 AM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 11:56:12 AM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:56:12 AM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 11:56:12 AM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:56:16 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 11:56:16 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 11:56:16 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 11:56:16 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 11:56:16 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:56:16 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 11:57:07 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:57:07 AM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 11:57:07 AM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 11:57:07 AM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:57:07 AM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 11:57:07 AM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:57:12 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 11:57:12 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 11:57:12 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 11:57:12 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 11:57:12 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:57:12 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 11:57:46 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:57:46 AM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 11:57:46 AM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 11:57:46 AM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:57:46 AM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 11:57:46 AM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:57:49 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 11:57:49 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 11:57:49 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 11:57:49 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 11:57:49 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:57:49 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 11:57:54 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:57:54 AM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 11:57:54 AM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 11:57:54 AM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 11:57:54 AM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:57:54 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 11:57:54 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:57:54 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:57:54 AM] /api/financialAccount/getAllListFinancialAccount POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 11:59:23 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:59:23 AM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 11:59:23 AM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 11:59:23 AM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 11:59:23 AM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:59:23 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED FINANCE ACCOUNT STILL IN USE
+[6/1/2021 11:59:23 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 11:59:23 AM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 11:59:23 AM] /api/financialAccount/getAllListFinancialAccount POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 11:59:29 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 11:59:29 AM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 11:59:29 AM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 11:59:29 AM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:59:29 AM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 11:59:29 AM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:59:31 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 11:59:31 AM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 11:59:31 AM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 11:59:31 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 11:59:31 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 11:59:32 AM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 12:02:20 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:02:20 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 12:02:20 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 12:02:20 PM] /api/financialAccount/getAllListFinancialAccount POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 12:02:20 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 12:02:20 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:02:20 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED FINANCE ACCOUNT STILL IN USE
+[6/1/2021 12:02:20 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 12:02:20 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:02:26 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:02:26 PM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 12:02:26 PM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 12:02:26 PM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:02:26 PM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 12:02:26 PM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:02:28 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 12:02:28 PM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 12:02:28 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 12:02:28 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 12:02:28 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:02:28 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 12:06:44 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:06:44 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 12:06:44 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 12:06:44 PM] /api/financialAccount/getAllListFinancialAccount POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 12:06:44 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 12:06:44 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:06:44 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED FINANCE ACCOUNT STILL IN USE
+[6/1/2021 12:06:44 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 12:06:44 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:06:50 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:06:50 PM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 12:06:50 PM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 12:06:50 PM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:06:50 PM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 12:06:50 PM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:06:52 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 12:06:52 PM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 12:06:52 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 12:06:53 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 12:06:53 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:06:53 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 12:06:54 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:06:54 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE TRANSACTION
+[6/1/2021 12:06:54 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE TRANSACTION FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:10:04 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:10:04 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 12:10:04 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 12:10:04 PM] /api/financialAccount/getAllListFinancialAccount POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 12:10:04 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 12:10:04 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:10:04 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED FINANCE ACCOUNT STILL IN USE
+[6/1/2021 12:10:04 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 12:10:04 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:10:10 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:10:10 PM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 12:10:10 PM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 12:10:10 PM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:10:10 PM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 12:10:11 PM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:10:13 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 12:10:13 PM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 12:10:13 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 12:10:13 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 12:10:13 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:10:13 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 12:10:15 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:10:15 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE TRANSACTION
+[6/1/2021 12:10:15 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE TRANSACTION FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:10:15 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE TRANSACTION
+[6/1/2021 12:10:15 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:10:15 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:12:51 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:12:51 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 12:12:51 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 12:12:51 PM] /api/financialAccount/getAllListFinancialAccount POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 12:12:51 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 12:12:51 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:12:51 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED FINANCE ACCOUNT STILL IN USE
+[6/1/2021 12:12:51 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 12:12:51 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:12:57 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:12:58 PM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 12:12:58 PM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 12:12:58 PM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:12:58 PM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 12:12:58 PM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:12:59 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 12:12:59 PM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 12:12:59 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 12:12:59 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 12:13:00 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:13:00 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 12:13:03 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:13:03 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE TRANSACTION
+[6/1/2021 12:13:03 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE TRANSACTION FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:13:03 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE TRANSACTION
+[6/1/2021 12:13:03 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:13:03 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:13:52 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:13:52 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE TRANSACTION
+[6/1/2021 12:13:52 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE TRANSACTION FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:13:53 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE TRANSACTION
+[6/1/2021 12:13:53 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:13:53 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:13:53 PM] /api/financialTransaction DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE TRANSACTION NOT FOUND
+[6/1/2021 12:13:55 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:13:55 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 12:13:55 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 12:13:55 PM] /api/financialAccount/getAllListFinancialAccount POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 12:13:55 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 12:13:55 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:13:55 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED FINANCE ACCOUNT STILL IN USE
+[6/1/2021 12:13:55 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 12:13:55 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:14:01 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:14:02 PM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 12:14:02 PM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 12:14:02 PM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:14:02 PM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 12:14:02 PM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:14:03 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 12:14:03 PM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 12:14:03 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 12:14:03 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 12:14:03 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:14:04 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 12:15:41 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:15:41 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE TRANSACTION
+[6/1/2021 12:15:41 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE TRANSACTION FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:15:41 PM] /api/financialTransaction/getAllListFinancialTransaction?page=1 POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE TRANSACTION BY USER ID
+[6/1/2021 12:15:41 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE TRANSACTION
+[6/1/2021 12:15:41 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:15:41 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:15:41 PM] /api/financialTransaction DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE TRANSACTION NOT FOUND
+[6/1/2021 12:15:47 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:15:47 PM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 12:15:47 PM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 12:15:47 PM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:15:47 PM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 12:15:47 PM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:15:50 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:15:50 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 12:15:50 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 12:15:50 PM] /api/financialAccount/getAllListFinancialAccount?page=1 POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 12:15:50 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 12:15:50 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:15:50 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED FINANCE ACCOUNT STILL IN USE
+[6/1/2021 12:15:50 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 12:15:50 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:15:53 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 12:15:53 PM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 12:15:53 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 12:15:53 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 12:15:53 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:15:53 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 12:19:26 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:19:26 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE TRANSACTION
+[6/1/2021 12:19:26 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE TRANSACTION FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:19:26 PM] /api/financialTransaction/getAllListFinancialTransaction?page=1 POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE TRANSACTION BY USER ID
+[6/1/2021 12:19:26 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE TRANSACTION
+[6/1/2021 12:19:27 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:19:27 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:19:27 PM] /api/financialTransaction DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE TRANSACTION NOT FOUND
+[6/1/2021 12:19:32 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:19:32 PM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 12:19:33 PM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 12:19:33 PM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:19:33 PM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 12:19:33 PM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:19:35 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:19:35 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 12:19:35 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 12:19:35 PM] /api/financialAccount/getAllListFinancialAccount?page=1 POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 12:19:35 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 12:19:35 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:19:35 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED FINANCE ACCOUNT STILL IN USE
+[6/1/2021 12:19:35 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 12:19:35 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:19:38 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 12:19:39 PM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 12:19:39 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 12:19:39 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 12:19:39 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:19:39 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 12:21:09 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:21:09 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE TRANSACTION
+[6/1/2021 12:21:09 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE TRANSACTION FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:21:09 PM] /api/financialTransaction/getAllListFinancialTransaction?page=1 POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE TRANSACTION BY USER ID
+[6/1/2021 12:21:09 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE TRANSACTION
+[6/1/2021 12:21:09 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:21:09 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:21:09 PM] /api/financialTransaction DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE TRANSACTION NOT FOUND
+[6/1/2021 12:21:15 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:21:15 PM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 12:21:15 PM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 12:21:15 PM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:21:15 PM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 12:21:15 PM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:21:17 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:21:17 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 12:21:17 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 12:21:17 PM] /api/financialAccount/getAllListFinancialAccount?page=1 POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 12:21:17 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 12:21:17 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:21:17 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED FINANCE ACCOUNT STILL IN USE
+[6/1/2021 12:21:17 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 12:21:17 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:21:19 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 12:21:19 PM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 12:21:19 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 12:21:19 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 12:21:19 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:21:19 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
+[6/1/2021 12:21:51 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:21:51 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE TRANSACTION
+[6/1/2021 12:21:51 PM] /api/financialTransaction POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE TRANSACTION FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:21:51 PM] /api/financialTransaction/getAllListFinancialTransaction?page=1 POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE TRANSACTION BY USER ID
+[6/1/2021 12:21:51 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE TRANSACTION
+[6/1/2021 12:21:51 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:21:51 PM] /api/financialTransaction PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND
+[6/1/2021 12:21:51 PM] /api/financialTransaction DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE TRANSACTION NOT FOUND
+[6/1/2021 12:21:51 PM] /api/financialTransaction/summary/daily?month=6 POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET SUMMARY DAILY FINANCE TRANSACTION BY USER ID
+[6/1/2021 12:21:51 PM] /api/financialTransaction/summary/monthly?year=2021 POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET SUMMARY MONTHLY FINANCE TRANSACTION BY USER ID
+[6/1/2021 12:21:57 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:21:57 PM] /api/user/user-test1@gmail.com GET ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS GET USER
+[6/1/2021 12:21:57 PM] /api/user/user-test1@gmail.com PUT ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS UPDATE USER
+[6/1/2021 12:21:57 PM] /api/user/user-test-notfound@gmail.com PUT ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:21:57 PM] /api/user/user-test1@gmail.com DELETE ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS DELETE USER
+[6/1/2021 12:21:57 PM] /api/user/user-test-notfound@gmail.com DELETE ::ffff:127.0.0.1 email:user-test-notfound@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:21:59 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com SUCCESS LOGIN
+[6/1/2021 12:21:59 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 SUCCESS CREATE NEW FINANCE ACCOUNT
+[6/1/2021 12:21:59 PM] /api/financialAccount POST ::ffff:127.0.0.1 USER_ID: 1 FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED
+[6/1/2021 12:21:59 PM] /api/financialAccount/getAllListFinancialAccount?page=1 POST ::ffff:127.0.0.1 USER_ID:1 SUCCESS GET FINANCE ACCOUNT BY USER ID
+[6/1/2021 12:21:59 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 SUCCESS UPDATE FINANCE ACCOUNT
+[6/1/2021 12:21:59 PM] /api/financialAccount PUT ::ffff:127.0.0.1 USER_ID: 1 FAILED UPDATE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:21:59 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED FINANCE ACCOUNT STILL IN USE
+[6/1/2021 12:21:59 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 SUCCESS DELETE FINANCE ACCOUNT
+[6/1/2021 12:21:59 PM] /api/financialAccount DELETE ::ffff:127.0.0.1 USER_ID: 1 FAILED DELETE FINANCE ACCOUNT NOT FOUND
+[6/1/2021 12:22:01 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com SUCCESS REGISTERED
+[6/1/2021 12:22:01 PM] /api/auth/register POST ::ffff:127.0.0.1 email:user-test@gmail FAILED EMAIL NOT VALID
+[6/1/2021 12:22:01 PM] /api/auth/register POST ::ffff:127.0.0.1 email: user-test@gmail.com FAILED USER ALREADY REGISTERED
+[6/1/2021 12:22:01 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com SUCCESS LOGIN
+[6/1/2021 12:22:01 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test1@gmail.com FAILED USER NOT FOUND
+[6/1/2021 12:22:01 PM] /api/auth/login POST ::ffff:127.0.0.1 email:user-test@gmail.com FAILED PASSWORD DIDN't MATCH
