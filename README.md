@@ -32,7 +32,7 @@ cd paper.id-backend && npm i && node server.js
 -------------------------
 ## Usage
 
-To get started with the application. Open your browser and go to [link to API Documentation!](http://localhost:3011/api-docs) and you are ready to use.
+To get started with the application. Open your browser and go to [link to API Documentation!](http://localhost:3011/api-docs) and you are ready to use. If you are using an API that needs a token, generate the token using login API and put the token inside the authorization button on the right-top of the page
 
 
 
