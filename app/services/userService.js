@@ -15,14 +15,14 @@ module.exports = {
             createdAt: dateToString(val.createdAt),
             updatedAt: dateToString(val.updatedAt),
           }
-          loggerInfo(req, "email:" + req.params.email + " SUCCESS GET USER")
+          loggerInfo(req, "EMAIL:" + req.params.email + " SUCCESS GET USER")
           res.status(200).send({
             error: false,
             message: "Get user profile",
             result: obj,
           })
         }else{
-          loggerError(req, "email:" + req.params.email + " FAILED GET USER NOT FOUND")
+          loggerError(req, "EMAIL:" + req.params.email + " FAILED GET USER NOT FOUND")
           res.status(200).send({
             error: true,
             message: "User not found",
@@ -43,7 +43,7 @@ module.exports = {
         if (val == null) {
           loggerError(
             req,
-            "email:" + req.params.email + " FAILED USER NOT FOUND"
+            "EMAIL:" + req.params.email + " FAILED USER NOT FOUND"
           )
           res.status(401).send({
             error: true,
@@ -56,7 +56,7 @@ module.exports = {
             .then((val) => {
               loggerInfo(
                 req,
-                "email:" + req.params.email + " SUCCESS UPDATE USER"
+                "EMAIL:" + req.params.email + " SUCCESS UPDATE USER"
               )              
               res.status(200).send({
                 error: false,
@@ -81,7 +81,7 @@ module.exports = {
         if (val == null) {
           loggerError(
             req,
-            "email:" + req.params.email + " FAILED USER NOT FOUND"
+            "EMAIL:" + req.params.email + " FAILED USER NOT FOUND"
           )
           res.status(401).send({
             error: true,
@@ -94,7 +94,7 @@ module.exports = {
             .then((val) => {
               loggerInfo(
                 req,
-                "email:" + req.params.email + " SUCCESS DELETE USER"
+                "EMAIL:" + req.params.email + " SUCCESS DELETE USER"
               )              
               res.status(200).send({
                 error: false,

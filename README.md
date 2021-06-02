@@ -26,7 +26,7 @@ docker-compose up
 If you are'nt using docker/docker-compose, you need to change the configuration a little bit from `.env`. and run this application by
 
 ```bash
-cd paper.id-backend && node server.js
+cd paper.id-backend && npm i && node server.js
 ```
 
 -------------------------
