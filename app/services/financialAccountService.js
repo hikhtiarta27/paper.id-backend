@@ -2,7 +2,7 @@ const financialAccountRepository = require("../repository/financialAccountReposi
 const financialTransactionRepository = require("../repository/financialTransactionRepository")
 
 const { dateToString } = require("../helper")
-const Logger = require("../log")
+const {loggerInfo, loggerError} = require("../log")
 
 module.exports = {
   createFinancialAccount(req, res) {
@@ -15,7 +15,7 @@ module.exports = {
       .getByUserIdAndName(userId, name)
       .then((val) => {
         if (val != null) {
-          Logger.debug(
+          loggerError(
             req,
             `USER_ID: ${userId} FAILED CREATE NEW FINANCE ACCOUNT ALREADY REGISTERED`
           )
@@ -28,7 +28,7 @@ module.exports = {
           financialAccountRepository
             .add({ userId, name, type, description })
             .then(() => {
-              Logger.debug(
+              loggerInfo(
                 req,
                 `USER_ID: ${userId} SUCCESS CREATE NEW FINANCE ACCOUNT`
               )
@@ -38,10 +38,21 @@ module.exports = {
                 result: null,
               })
             })
+            .catch(() => {
+              res.status(401).send({
+                error: true,
+                message: "Missing parameter",
+                result: null,
+              })
+            })
         }
       })
-      .catch((err) => {
-        res.status(500).send(err.message)
+      .catch(() => {
+        res.status(401).send({
+          error: true,
+          message: "Missing parameter",
+          result: null,
+        })
       })
   },
 
@@ -69,7 +80,7 @@ module.exports = {
             listOfFinancialAccount.push(obj)
           }
         }
-        Logger.debug(
+        loggerInfo(
           req,
           "USER_ID:" +
             req.body.userId +
@@ -81,8 +92,12 @@ module.exports = {
           result: listOfFinancialAccount,
         })
       })
-      .catch((err) => {
-        res.status(500).send(err.message)
+      .catch(() => {
+        res.status(401).send({
+          error: true,
+          message: "Missing parameter",
+          result: null,
+        })
       })
   },
 
@@ -96,7 +111,7 @@ module.exports = {
       .getByUserIdAndId(userId, id)
       .then((val) => {
         if (val == null) {
-          Logger.debug(
+          loggerError(
             req,
             `USER_ID: ${userId} FAILED UPDATE FINANCE ACCOUNT NOT FOUND`
           )
@@ -109,7 +124,7 @@ module.exports = {
           financialAccountRepository
             .update({ name, type, description }, id)
             .then(() => {
-              Logger.debug(
+              loggerInfo(
                 req,
                 `USER_ID: ${userId} SUCCESS UPDATE FINANCE ACCOUNT`
               )
@@ -121,8 +136,12 @@ module.exports = {
             })
         }
       })
-      .catch((err) => {
-        res.status(500).send(err.message)
+      .catch(() => {
+        res.status(401).send({
+          error: true,
+          message: "Missing parameter",
+          result: null,
+        })
       })
   },
 
@@ -133,7 +152,7 @@ module.exports = {
       .getByUserIdAndId(userId, id)
       .then((val) => {
         if (val == null) {
-          Logger.debug(
+          loggerError(
             req,
             `USER_ID: ${userId} FAILED DELETE FINANCE ACCOUNT NOT FOUND`
           )
@@ -146,7 +165,7 @@ module.exports = {
           financialTransactionRepository.getByFinanceAccountId(id)
           .then(val=>{
             if(val != null){
-              Logger.debug(
+              loggerError(
                 req,
                 `USER_ID: ${userId} FAILED FINANCE ACCOUNT STILL IN USE`
               )
@@ -157,7 +176,7 @@ module.exports = {
               })
             }else{
               financialAccountRepository.delete(id).then(() => {
-                Logger.debug(
+                loggerInfo(
                   req,
                   `USER_ID: ${userId} SUCCESS DELETE FINANCE ACCOUNT`
                 )
@@ -169,13 +188,21 @@ module.exports = {
               })
             }
           })
-          .catch(err=>{
-          
-          })          
+          .catch(() => {
+            res.status(401).send({
+              error: true,
+              message: "Missing parameter",
+              result: null,
+            })
+          })        
         }
       })
-      .catch((err) => {
-        res.status(500).send(err.message)
+      .catch(() => {
+        res.status(401).send({
+          error: true,
+          message: "Missing parameter",
+          result: null,
+        })
       })
   },
 

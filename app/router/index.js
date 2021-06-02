@@ -8,6 +8,4 @@ module.exports = function (app) {
   app.use("/api/user", userController)
   app.use("/api/financialAccount", financialAccountController)
   app.use("/api/financialTransaction", financialTransactionController)
-
-
 }

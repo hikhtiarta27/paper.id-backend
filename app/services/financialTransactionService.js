@@ -2,7 +2,7 @@ const financialTransactionRepository = require("../repository/financialTransacti
 const financialAccountRepository = require("../repository/financialAccountRepository")
 
 const { dateToString, currencyFormatter } = require("../helper")
-const Logger = require("../log")
+const {loggerInfo, loggerError} = require("../log")
 
 module.exports = {
   createFinancialTransaction(req, res) {
@@ -16,7 +16,7 @@ module.exports = {
       .getByUserIdAndId(userId, financialAccountId)
       .then((val) => {
         if (val == null) {
-          Logger.debug(
+          loggerError(
             req,
             `USER_ID: ${userId} FAILED CREATE NEW FINANCE TRANSACTION FINANCE ACCOUNT ID NOT FOUND`
           )
@@ -29,7 +29,7 @@ module.exports = {
           financialTransactionRepository
             .add({ financialAccountId, name, amount, description })
             .then(() => {
-              Logger.debug(
+              loggerInfo(
                 req,
                 `USER_ID: ${userId} SUCCESS CREATE NEW FINANCE TRANSACTION`
               )
@@ -40,6 +40,13 @@ module.exports = {
               })
             })
         }
+      })
+      .catch(() => {
+        res.status(401).send({
+          error: true,
+          message: "Missing parameter",
+          result: null,
+        })
       })
   },
 
@@ -75,7 +82,7 @@ module.exports = {
             listOfFinancialTransaction.push(obj)
           }
         }
-        Logger.debug(
+        loggerInfo(
           req,
           "USER_ID:" +
             req.body.userId +
@@ -87,8 +94,12 @@ module.exports = {
           result: listOfFinancialTransaction,
         })
       })
-      .catch((err) => {
-        res.status(500).send(err.message)
+      .catch(() => {
+        res.status(401).send({
+          error: true,
+          message: "Missing parameter",
+          result: null,
+        })
       })
   },
 
@@ -104,7 +115,7 @@ module.exports = {
       .getByUserIdAndId(userId, financialAccountId)
       .then((val) => {
         if (val == null) {
-          Logger.debug(
+          loggerError(
             req,
             `USER_ID: ${userId} FAILED UPDATE FINANCE ACCOUNT ID NOT FOUND`
           )
@@ -118,7 +129,7 @@ module.exports = {
             .getByUserIdAndId(userId, id)
             .then((val) => {
               if (val == null) {
-                Logger.debug(
+                loggerError(
                   req,
                   `USER_ID: ${userId} FAILED UPDATE FINANCE TRANSACTION ID NOT FOUND`
                 )
@@ -131,7 +142,7 @@ module.exports = {
                 financialTransactionRepository
                   .update({ financialAccountId, name, amount, description }, id)
                   .then(() => {
-                    Logger.debug(
+                    loggerInfo(
                       req,
                       `USER_ID: ${userId} SUCCESS UPDATE FINANCE TRANSACTION`
                     )
@@ -145,6 +156,13 @@ module.exports = {
             })
         }
       })
+      .catch(() => {
+        res.status(401).send({
+          error: true,
+          message: "Missing parameter",
+          result: null,
+        })
+      })
   },
 
   deleteFinancialTransactionByUserIdAndId(req, res) {
@@ -154,7 +172,7 @@ module.exports = {
       .getByUserIdAndId(userId, id)
       .then((val) => {
         if (val == null) {
-          Logger.debug(
+          loggerError(
             req,
             `USER_ID: ${userId} FAILED DELETE FINANCE TRANSACTION NOT FOUND`
           )
@@ -173,8 +191,12 @@ module.exports = {
           })
         }
       })
-      .catch((err) => {
-        res.status(500).send(err.message)
+      .catch(() => {
+        res.status(401).send({
+          error: true,
+          message: "Missing parameter",
+          result: null,
+        })
       })
   },
 
@@ -198,7 +220,7 @@ module.exports = {
           }
         }
 
-        Logger.debug(
+        loggerInfo(
           req,
           "USER_ID:" +
             req.body.userId +
@@ -210,8 +232,12 @@ module.exports = {
           result: listSummary,
         })
       })
-      .catch((err) => {
-        res.status(500).send(err.message)
+      .catch(() => {
+        res.status(401).send({
+          error: true,
+          message: "Missing parameter",
+          result: null,
+        })
       })
   },
 
@@ -235,7 +261,7 @@ module.exports = {
           }
         }
 
-        Logger.debug(
+        loggerInfo(
           req,
           "USER_ID:" +
             req.body.userId +
@@ -247,8 +273,12 @@ module.exports = {
           result: listSummary,
         })
       })
-      .catch((err) => {
-        res.status(500).send(err.message)
+      .catch(() => {
+        res.status(401).send({
+          error: true,
+          message: "Missing parameter",
+          result: null,
+        })
       })
   },
 

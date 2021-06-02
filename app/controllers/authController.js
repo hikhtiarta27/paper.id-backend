@@ -66,11 +66,24 @@ apiRouter.post("/register", [middlewares.isValidEmail], authService.register)
 /**
  * @openapi
  * /api/auth/logout:
- *   post:
- *    description: API for logout from system
- *    responses:
- *      200:
- *        description: Logout succesfully
+ *   delete:
+ *     description: API for logout from system
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               userId:
+ *                 type: Integer
+ *                 description: User's id from JWT payload
+ *                 example: 1
+ *     security:
+ *	     - jwt: []
+ *     responses:
+ *       200:
+ *         description: Logout succesfully
  */
 apiRouter.post("/logout", authService.logout)
 

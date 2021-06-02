@@ -1,9 +1,9 @@
 const { isEmail } = require("../helper")
-const Logger = require("../log")
+const {loggerInfo, loggerError} = require("../log")
 
 function isValidEmail(req, res, next) {
   if (!isEmail(req.body.email)) {
-    Logger.debug(req, "email:" + req.body.email + " FAILED EMAIL NOT VALID")    
+    loggerError(req, "email:" + req.body.email + " FAILED EMAIL NOT VALID")    
     res.status(401).send({
       error: true,
       message: "Email not valid",

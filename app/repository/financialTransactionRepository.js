@@ -54,57 +54,59 @@ module.exports = {
       },
     ]
 
-    if (options.type != null) {
-      obj["type"] = {
-        [Sequelize.Op.like]: `%${options.type}%`,
-      }
-    }
-
-    if (options.financeName != null) {
-      obj["name"] = {
-        [Sequelize.Op.like]: `%${options.financeName}%`,
-      }
-    }
-
-    if (options.financeAccount != null) {
-      includeField = [
-        {
-          model: FinancialAccount,
-          where: {
-            userId,
-            name: {
-              [Sequelize.Op.like]: `%${options.financeAccount}%`,
-            },
-          },
-          attibutes: ["name"],
-        },
-      ]
-    }
-
-    if (options.description != null) {
-      obj["description"] = {
-        [Sequelize.Op.like]: `%${options.description}%`,
-      }
-    }
-
-    if (options.startDate != null && options.endDate != null) {
-      let endDate = new Date(options.endDate)
-      endDate.setDate(endDate.getDate() + 1)
-      obj["createdAt"] = {
-        [Sequelize.Op.gte]: new Date(options.startDate),
-        [Sequelize.Op.lte]: endDate,
-      }
-    } else {
-      if (options.startDate != null) {
-        obj["createdAt"] = {
-          [Sequelize.Op.gte]: new Date(options.startDate),
+    if (options != null) {
+      if (options.type != null) {
+        obj["type"] = {
+          [Sequelize.Op.like]: `%${options.type}%`,
         }
       }
-      if (options.endDate != null) {
+
+      if (options.financeName != null) {
+        obj["name"] = {
+          [Sequelize.Op.like]: `%${options.financeName}%`,
+        }
+      }
+
+      if (options.financeAccount != null) {
+        includeField = [
+          {
+            model: FinancialAccount,
+            where: {
+              userId,
+              name: {
+                [Sequelize.Op.like]: `%${options.financeAccount}%`,
+              },
+            },
+            attibutes: ["name"],
+          },
+        ]
+      }
+
+      if (options.description != null) {
+        obj["description"] = {
+          [Sequelize.Op.like]: `%${options.description}%`,
+        }
+      }
+
+      if (options.startDate != null && options.endDate != null) {
         let endDate = new Date(options.endDate)
         endDate.setDate(endDate.getDate() + 1)
         obj["createdAt"] = {
+          [Sequelize.Op.gte]: new Date(options.startDate),
           [Sequelize.Op.lte]: endDate,
+        }
+      } else {
+        if (options.startDate != null) {
+          obj["createdAt"] = {
+            [Sequelize.Op.gte]: new Date(options.startDate),
+          }
+        }
+        if (options.endDate != null) {
+          let endDate = new Date(options.endDate)
+          endDate.setDate(endDate.getDate() + 1)
+          obj["createdAt"] = {
+            [Sequelize.Op.lte]: endDate,
+          }
         }
       }
     }
@@ -115,11 +117,12 @@ module.exports = {
       order: [["id", "DESC"]],
     }
 
-    let offset = options.page * 10
-
-    queryOptions["limit"] = 10
-    queryOptions["offset"] = offset - 10
-    // queryOptions['order'] = [["createdAt", "ASC"]]
+    if (options != null) {
+      let offset = options.page * 10
+      queryOptions["limit"] = 10
+      queryOptions["offset"] = offset - 10
+      // queryOptions['order'] = [["createdAt", "ASC"]]
+    }
 
     return FinancialTransaction.findAll(queryOptions)
   },
@@ -251,11 +254,11 @@ module.exports = {
     return FinancialTransaction.findAll(queryOptions)
   },
 
-/**
- * 
- * @returns 
- */
-  restore(){
+  /**
+   *
+   * @returns
+   */
+  restore() {
     return FinancialTransaction.restore()
   },
 }

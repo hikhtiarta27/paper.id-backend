@@ -1,6 +1,6 @@
 const userRepository = require("../repository/userRepository")
 const { stringToPhoneNumber, dateToString } = require("../helper")
-const Logger = require("../log")
+const {loggerInfo, loggerError} = require("../log")
 
 module.exports = {
   getUserProfile(req, res) {
@@ -15,14 +15,14 @@ module.exports = {
             createdAt: dateToString(val.createdAt),
             updatedAt: dateToString(val.updatedAt),
           }
-          Logger.debug(req, "email:" + req.params.email + " SUCCESS GET USER")
+          loggerInfo(req, "email:" + req.params.email + " SUCCESS GET USER")
           res.status(200).send({
             error: false,
             message: "Get user profile",
             result: obj,
           })
         }else{
-          Logger.debug(req, "email:" + req.params.email + " FAILED GET USER NOT FOUND")
+          loggerError(req, "email:" + req.params.email + " FAILED GET USER NOT FOUND")
           res.status(200).send({
             error: true,
             message: "User not found",
@@ -41,7 +41,7 @@ module.exports = {
       .get(req.params.email)
       .then((val) => {
         if (val == null) {
-          Logger.debug(
+          loggerError(
             req,
             "email:" + req.params.email + " FAILED USER NOT FOUND"
           )
@@ -54,7 +54,7 @@ module.exports = {
           userRepository
             .update(req.body, req.params.email)
             .then((val) => {
-              Logger.debug(
+              loggerInfo(
                 req,
                 "email:" + req.params.email + " SUCCESS UPDATE USER"
               )              
@@ -79,7 +79,7 @@ module.exports = {
       .get(req.params.email)
       .then((val) => {
         if (val == null) {
-          Logger.debug(
+          loggerError(
             req,
             "email:" + req.params.email + " FAILED USER NOT FOUND"
           )
@@ -92,7 +92,7 @@ module.exports = {
           userRepository
             .delete(req.params.email)
             .then((val) => {
-              Logger.debug(
+              loggerInfo(
                 req,
                 "email:" + req.params.email + " SUCCESS DELETE USER"
               )              

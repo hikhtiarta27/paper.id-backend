@@ -3,6 +3,7 @@ const express = require("express")
 const app = express()
 const swaggerUi = require("swagger-ui-express")
 const swaggerJSDoc = require("swagger-jsdoc")
+const {logger} = require("./app/log")
 
 app.use([
   express.json(),

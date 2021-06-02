@@ -17,7 +17,7 @@ describe("UserRepository", () => {
     done()
   })
 
-  test("get repo should be success : user created", async (done) => {
+  test("add repo should be success : user created", async (done) => {
     let param = {
       email: "tes123@tes.com",
       password: "tes123@tes.com",

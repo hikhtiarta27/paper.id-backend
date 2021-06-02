@@ -60,32 +60,34 @@ module.exports = {
       userId,
     }
 
-    if (options.type != null) {
-      obj["type"] = {
-        [Sequelize.Op.like]: `%${options.type}%`,
-      }
-    }
-
-    if (options.startDate != null && options.endDate != null) {
-      let endDate = new Date(options.endDate)
-      endDate.setDate(endDate.getDate() + 1)
-      obj["createdAt"] = {
-        [Sequelize.Op.gte]: new Date(options.startDate),
-        [Sequelize.Op.lte]: endDate,
-      }
-    } else {
-      if (options.startDate != null) {
-        obj["createdAt"] = {
-          [Sequelize.Op.gte]: new Date(options.startDate),
+    if (options != null){
+      if (options.type != null) {
+        obj["type"] = {
+          [Sequelize.Op.like]: `%${options.type}%`,
         }
       }
-      if (options.endDate != null) {
+  
+      if (options.startDate != null && options.endDate != null) {
         let endDate = new Date(options.endDate)
         endDate.setDate(endDate.getDate() + 1)
         obj["createdAt"] = {
+          [Sequelize.Op.gte]: new Date(options.startDate),
           [Sequelize.Op.lte]: endDate,
         }
-      }
+      } else {
+        if (options.startDate != null) {
+          obj["createdAt"] = {
+            [Sequelize.Op.gte]: new Date(options.startDate),
+          }
+        }
+        if (options.endDate != null) {
+          let endDate = new Date(options.endDate)
+          endDate.setDate(endDate.getDate() + 1)
+          obj["createdAt"] = {
+            [Sequelize.Op.lte]: endDate,
+          }
+        }
+      }  
     }
 
     let queryOptions = {
@@ -93,11 +95,12 @@ module.exports = {
       order: [["id", "DESC"]],
     }
 
-    let offset = options.page * 10
-
-    queryOptions["limit"] = 10
-    queryOptions["offset"] = offset - 10
-    // queryOptions['order'] = [["createdAt", "DESC"]]
+    if (options != null){
+      let offset = options.page * 10
+      queryOptions["limit"] = 10
+      queryOptions["offset"] = offset - 10
+      // queryOptions['order'] = [["createdAt", "DESC"]]
+    }    
 
     return FinancialAccount.findAll(queryOptions)
   },

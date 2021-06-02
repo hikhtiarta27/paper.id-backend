@@ -1,32 +1,18 @@
-var fs = require("fs")
-
-let logInfoPath =
-  process.env.NODE_ENV === "test"
-    ? "./app/log/test/logInfo.test.txt"
-    : "./app/log/logInfo.txt"
-let logErrorPath = 
-  process.env.NODE_ENV === "test"
-    ? "./app/log/test/logError.test.txt"
-    : "./app/log/logError.txt"
-let logDebugPath = 
-  process.env.NODE_ENV === "test"
-    ? "./app/log/test/logDebug.test.txt"
-    : "./app/log/logDebug.txt"
-
-function info() {
-  var date = new Date()
-  var logData =
-    req.originalUrl +
-    " " +
-    req.method +
-    " " +
-    req.ip +
-    " " +
-    date.toLocaleDateString() +
-    " " +
-    date.toLocaleTimeString() +
-    "\n"
-  fs.appendFile(logInfoPath, logData, () => {})
+const winston = require('winston');
+ 
+const logger = winston.createLogger({
+  level: 'info',
+  format: winston.format.json(),  
+  transports: [    
+    new winston.transports.File({ filename: process.env.NODE_ENV == 'test' ? './app/log/error.test.log' : './app/log/error.log', level: 'error' }),
+    new winston.transports.File({ filename: process.env.NODE_ENV == 'test' ? './app/log/info.test.log' : './app/log/info.log' }),
+  ],
+});
+ 
+if (process.env.NODE_ENV !== 'production') {
+  logger.add(new winston.transports.Console({
+    format: winston.format.simple(),
+  }));
 }
 
 /**
@@ -34,22 +20,11 @@ function info() {
  * @param {Object} req
  * @param {String} message
  */
-function error(req, message) {
-  var date = new Date()
-  var logData =
-    req.originalUrl +
-    " " +
-    req.method +
-    " " +
-    req.ip +
-    " " +
-    date.toLocaleDateString() +
-    " " +
-    date.toLocaleTimeString() +
-    " " +
-    message +
-    "\n"
-  fs.appendFile(logErrorPath, logData, () => {})
+function loggerInfo(req, message){
+  logger.log({
+    level: 'info',
+    message: `${req.ip} [${new Date().toUTCString()}] ${req.method} ${req.originalUrl} | ${message}`
+  })
 }
 
 /**
@@ -57,27 +32,14 @@ function error(req, message) {
  * @param {Object} req
  * @param {String} message
  */
-function debug(req, message) {
-  var date = new Date()
-  var logData = 
-    "[" +
-    date.toLocaleDateString() +
-    " " +
-    date.toLocaleTimeString() +
-    "] " +
-    req.originalUrl +
-    " " +
-    req.method +
-    " " +
-    req.ip +
-    " " +
-    message +
-    "\n"
-  fs.appendFile(logDebugPath, logData, () => {})
+function loggerError(req, message){
+  logger.log({
+    level: 'error',
+    message: `${req.ip} [${new Date().toUTCString()}] ${req.method} ${req.originalUrl} | ${message}`
+  })
 }
 
 module.exports = {
-  info,
-  error,
-  debug,
+  loggerInfo,
+  loggerError
 }
